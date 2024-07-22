@@ -3,7 +3,7 @@ from app.shop import Shop
 from app.utils import load_config
 
 
-def shop_trip():
+def shop_trip() -> None:
     config = load_config("config.json")
     fuel_price = config["FUEL_PRICE"]
     customers_data = config["customers"]
@@ -18,7 +18,10 @@ def shop_trip():
         best_shop = None
         for shop in shops:
             trip_cost = customer.calculate_trip_cost(shop, fuel_price)
-            print(f"{customer.name}'s trip to the {shop.name} costs {trip_cost:.2f}")
+            print(
+                f"{customer.name}'s trip to the {shop.name} "
+                f"costs {trip_cost:.2f}"  # noqa: E231
+            )  # noqa: E231
             if trip_cost < min_cost:
                 min_cost = trip_cost
                 best_shop = shop
@@ -29,13 +32,16 @@ def shop_trip():
             customer.money -= min_cost
             best_shop.print_receipt(customer)
             print(f"{customer.name} rides home")
-            print(f"{customer.name} now has {customer.money:.2f} dollars")
+            print(
+                f"{customer.name} now has {customer.money:.2f} "  # noqa: E231
+                f"dollars"
+            )  # noqa: E231
             print()
         else:
             print(
-                f"{customer.name} doesn't have enough money to make a purchase in any shop"
+                f"{customer.name} doesn't have enough money "
+                f"to make a purchase in any shop"
             )
-            print()
 
 
 if __name__ == "__main__":
