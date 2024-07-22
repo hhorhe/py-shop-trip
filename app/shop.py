@@ -13,7 +13,7 @@ class Shop:
 
     def print_receipt(self, customer: str) -> None:
         current_time = get_current_time()
-        print(f"Date: {current_time.strftime("%d/%m/%Y %H:%M:%S")}")
+        print(f'Date: {current_time.strftime("%d/%m/%Y %H:%M:%S")}')
         print(f"Thanks, {customer.name}, for your purchase!")
         print("You have bought:")
         total_cost = 0
