@@ -21,13 +21,13 @@ class Shop:
             cost = self.products[product] * quantity
             total_cost += cost
 
-            if cost.is_integer():
+            if float(cost).is_integer():
                 cost_str = f"{int(cost)}"
             else:
                 cost_str = f"{cost:.1f}"  # noqa: E231
             print(f"{quantity} {product}s for {cost_str} dollars")
 
-        if total_cost.is_integer():
+        if float(total_cost).is_integer():
             total_cost_str = f"{int(total_cost)}"
         else:
             total_cost_str = f"{total_cost:.1f}"  # noqa: E231
