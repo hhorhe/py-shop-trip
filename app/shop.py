@@ -31,6 +31,7 @@ class Shop:
             total_cost_str = f"{int(total_cost)}"
         else:
             total_cost_str = f"{total_cost:.1f}"  # noqa: E231
+
         print(f"Total cost is {total_cost_str} dollars")
         print("See you again!")
         print()
