@@ -1,3 +1,4 @@
+import math
 from app.car import Car
 
 
@@ -27,7 +28,7 @@ class Customer:
     def calculate_dist(
         self, loc1: tuple[float, float], loc2: tuple[float, float]
     ) -> float:
-        return ((loc1[0] - loc2[0]) ** 2 + (loc1[1] - loc2[1]) ** 2) ** 0.5
+        return math.dist(loc1, loc2)
 
     def calculate_product_cost(self, shop_products: dict[str, float]) -> float:
         total_cost = 0

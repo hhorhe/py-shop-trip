@@ -13,9 +13,11 @@ class Shop:
 
     def print_receipt(self, customer: any) -> None:
         current_time = get_current_time()
-        print(f'Date: {current_time.strftime("%d/%m/%Y %H:%M:%S")}')
-        print(f"Thanks, {customer.name}, for your purchase!")
-        print("You have bought:")
+        print(
+            f'Date: {current_time.strftime("%d/%m/%Y %H:%M:%S")}\n'
+            f"Thanks, {customer.name}, for your purchase!\n"
+            f"You have bought:"  # noqa E231
+        )
         total_cost = 0
         for product, quantity in customer.product_cart.items():
             cost = self.products[product] * quantity
@@ -32,6 +34,6 @@ class Shop:
         else:
             total_cost_str = f"{total_cost:.1f}"  # noqa: E231
 
-        print(f"Total cost is {total_cost_str} dollars")
-        print("See you again!")
+        print(f"Total cost is {total_cost_str} dollars\n"
+              f"See you again!")
         print()

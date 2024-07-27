@@ -21,7 +21,7 @@ def shop_trip() -> None:
             print(
                 f"{customer.name}'s trip to the {shop.name} "
                 f"costs {trip_cost:.2f}"  # noqa E231
-            )  # noqa E231
+            )
             if trip_cost < min_cost:
                 min_cost = trip_cost
                 best_shop = shop
@@ -30,20 +30,17 @@ def shop_trip() -> None:
             print(f"{customer.name} rides to {best_shop.name}")
             print()
 
-            original_location = (
-                customer.location
-            )
+            original_location = customer.location
             customer.location = best_shop.location
             customer.money -= min_cost
             best_shop.print_receipt(customer)
             print(f"{customer.name} rides home")
 
-            customer.location = (
-                original_location
-            )
+            customer.location = original_location
             print(
-                f"{customer.name} now has {customer.money:.2f} " f"dollars"  # noqa E231
-            )  # noqa E231
+                f"{customer.name} now has {customer.money:.2f} "  # noqa E231
+                f"dollars"
+            )
             print()
         else:
             print(
