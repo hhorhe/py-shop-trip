@@ -31,8 +31,8 @@ class Customer:
         return math.dist(loc1, loc2)
 
     def calculate_product_cost(self, shop_products: dict[str, float]) -> float:
-        total_cost = 0
-        for product, quantity in self.product_cart.items():
-            if product in shop_products:
-                total_cost += shop_products[product] * quantity
-        return total_cost
+        return sum(
+            shop_products[product] * quantity
+            for product, quantity in self.product_cart.items()
+            if product in shop_products
+        )

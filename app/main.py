@@ -27,8 +27,7 @@ def shop_trip() -> None:
                 best_shop = shop
 
         if best_shop and min_cost <= customer.money:
-            print(f"{customer.name} rides to {best_shop.name}")
-            print()
+            print(f"{customer.name} rides to {best_shop.name}\n")
 
             original_location = customer.location
             customer.location = best_shop.location
@@ -39,9 +38,8 @@ def shop_trip() -> None:
             customer.location = original_location
             print(
                 f"{customer.name} now has {customer.money:.2f} "  # noqa E231
-                f"dollars"
+                f"dollars\n"
             )
-            print()
         else:
             print(
                 f"{customer.name} doesn't have enough money "

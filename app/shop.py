@@ -35,5 +35,4 @@ class Shop:
             total_cost_str = f"{total_cost:.1f}"  # noqa: E231
 
         print(f"Total cost is {total_cost_str} dollars\n"
-              f"See you again!")
-        print()
+              f"See you again!\n")
